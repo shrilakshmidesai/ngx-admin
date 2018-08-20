@@ -32,6 +32,8 @@ import {
   ThemeSwitcherComponent,
   TinyMCEComponent,
   ThemeSwitcherListComponent,
+  LangSwitcherComponent,
+  LangSwitcherListComponent,
 } from './components';
 import {
   CapitalizePipe,
@@ -49,8 +51,9 @@ import {
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
 import { CORPORATE_THEME } from './styles/theme.corporate';
+import { TranslateModule } from '@ngx-translate/core';
 
-const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule];
+const BASE_MODULES = [CommonModule, FormsModule, ReactiveFormsModule, TranslateModule];
 
 const NB_MODULES = [
   NbCardModule,
@@ -75,6 +78,8 @@ const COMPONENTS = [
   LayoutDirectionSwitcherComponent,
   ThemeSwitcherComponent,
   ThemeSwitcherListComponent,
+  LangSwitcherComponent,
+  LangSwitcherListComponent,
   HeaderComponent,
   FooterComponent,
   SearchInputComponent,
@@ -88,6 +93,7 @@ const COMPONENTS = [
 
 const ENTRY_COMPONENTS = [
   ThemeSwitcherListComponent,
+  LangSwitcherListComponent,
 ];
 
 const PIPES = [
@@ -101,7 +107,7 @@ const PIPES = [
 const NB_THEME_PROVIDERS = [
   ...NbThemeModule.forRoot(
     {
-      name: 'cosmic',
+      name: 'corporate',
     },
     [ DEFAULT_THEME, COSMIC_THEME, CORPORATE_THEME ],
   ).providers,
